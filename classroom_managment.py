@@ -39,10 +39,10 @@ def index(name):
             return classroom.index(i)
         
 def add_student(name, email=None):
-      if email:
-             classroom.append({'name':name ,'email':email, 'grades':[]})
-      else:
-           classroom.append({'name':name ,'email':name+'@example.com', 'grades':[]})
+    if email:
+      classroom.append({'name':name ,'email':email, 'grades':[]})
+    else: 
+      classroom.append({'name':name ,'email':name.lower()+'@example.com', 'grades':[]})
 
 def delete_student(name):
     i=index(name)
@@ -73,8 +73,11 @@ def avg_grade(name, profession):
 
 def get_professions(name):
      i=index(name)
-     l=[]
+     
+     max=0
      for i in classroom[i]['grades']:
-          if i[1]>90:
+          if i[1]>max:
+               l=[]
                l.append(i[0])
-     return l   
+               max=i[1]
+     return l 
