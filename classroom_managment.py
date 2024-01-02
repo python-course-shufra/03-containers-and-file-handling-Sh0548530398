@@ -73,11 +73,9 @@ def avg_grade(name, profession):
 
 def get_professions(name):
      i=index(name)
-     
-     max=0
+     s=set()
      for i in classroom[i]['grades']:
-          if i[1]>max:
-               l=[]
-               l.append(i[0])
-               max=i[1]
-     return l 
+          s.add(i[0])
+     l=[]
+     l=s          
+     return l     
